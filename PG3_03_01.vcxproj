@@ -115,6 +115,8 @@ xcopy C:\KamataEngine\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClCompile Include="C:\KamataEngine\DirectXGame\base\TextureManager.cpp" />
     <ClCompile Include="C:\KamataEngine\DirectXGame\2d\ImGuiManager.cpp" />
     <ClCompile Include="C:\KamataEngine\Adapter\Novice.cpp" />
+    <ClCompile Include="Header\CollisionManager.cpp" />
+    <ClCompile Include="Header\Entity.cpp" />
     <ClCompile Include="Header\Scene\MyGameScene.cpp" />
     <ClCompile Include="Header\Scene\SceneManager.cpp" />
     <ClCompile Include="Header\Scene\TitleScene.cpp" />
@@ -152,10 +154,13 @@ xcopy C:\KamataEngine\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="C:\KamataEngine\DirectXGame\input\Input.h" />
     <ClInclude Include="C:\KamataEngine\DirectXGame\scene\GameScene.h" />
     <ClInclude Include="C:\KamataEngine\Adapter\Novice.h" />
+    <ClInclude Include="Header\CollisionManager.h" />
+    <ClInclude Include="Header\Entity.h" />
     <ClInclude Include="Header\InputManager.h" />
     <ClInclude Include="Header\Scene\MyGameScene.h" />
     <ClInclude Include="Header\Scene\SceneManager.h" />
     <ClInclude Include="Header\Scene\TitleScene.h" />
+    <ClInclude Include="Header\Utils\Math.h" />
     <ClInclude Include="Header\Utils\SoLib\SoLib.h" />
     <ClInclude Include="Header\Utils\SoLib\SoLib_Easing.h" />
     <ClInclude Include="Header\Utils\SoLib\SoLib_ImGui.h" />

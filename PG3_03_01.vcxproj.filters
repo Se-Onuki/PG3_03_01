@@ -71,6 +71,12 @@
     <ClCompile Include="Header\Utils\SoLib\SoLib_ImGui.cpp">
       <Filter>Header\Utils\SoLib</Filter>
     </ClCompile>
+    <ClCompile Include="Header\Entity.cpp">
+      <Filter>KamataEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Header\CollisionManager.cpp">
+      <Filter>Header</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\KamataEngine\DirectXGame\audio\Audio.h">
@@ -173,6 +179,15 @@
     </ClInclude>
     <ClInclude Include="Header\InputManager.h">
       <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Entity.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\CollisionManager.h">
+      <Filter>Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Utils\Math.h">
+      <Filter>Header\Utils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
