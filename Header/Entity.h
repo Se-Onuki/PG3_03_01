@@ -25,7 +25,7 @@ struct Object {
 	bool isAlive_ = true;
 
 	virtual void Init() = 0;
-	virtual void Update() = 0;
+	virtual void Update(const float deltaTime) = 0;
 	virtual void Draw();
 
 	virtual void OnCollision(Object *const other) = 0;
@@ -46,7 +46,7 @@ struct Player : public Object {
 	const float kMoveSpeed_ = 10.f;
 
 	void Init() override;
-	void Update() override;
+	void Update(const float deltaTime) override;
 
 	void OnCollision(Object *const other) override;
 };
@@ -54,15 +54,18 @@ struct Player : public Object {
 struct Enemy :public Object {
 
 	void Init() override;
-	void Update() override;
+	void Update(const float deltaTime) override;
 
 	void OnCollision(Object *const other) override;
 };
 
 struct Bullet :public Object {
 
+	Vector2 velocity_;
+	float lifeLimit_;
+
 	void Init() override;
-	void Update() override;
+	void Update(const float deltaTime) override;
 
 	void OnCollision(Object *const other) override;
 };

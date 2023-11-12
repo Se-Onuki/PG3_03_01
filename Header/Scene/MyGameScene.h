@@ -22,11 +22,12 @@ public:
 
 	/// @brief オブジェクトを追加
 	/// @param object オブジェクト
-	void AddObject(std::unique_ptr<Object> object);
+	Object *const AddObject(std::unique_ptr<Object> object);
 
 private:
-
+	// ゲームオブジェクトを保存する
 	std::list<std::unique_ptr<Object>> objectList_;
+	// コライダを使った当たり判定処理のクラス
 	CollisionManager *pCollisionManager_ = nullptr;
 
 };

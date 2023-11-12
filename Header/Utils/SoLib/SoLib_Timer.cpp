@@ -121,7 +121,10 @@ namespace SoLib {
 	}
 
 	float DeltaTimer::GetProgress() const {
-		return std::clamp(nowFlame_ / goalFlame_, 0.f, 1.f);
+		if (goalFlame_ != 0.f) {
+			return std::clamp(nowFlame_ / goalFlame_, 0.f, 1.f);
+		}
+		return 0.f;
 	}
 
 	bool FunctionTimer::Update() {

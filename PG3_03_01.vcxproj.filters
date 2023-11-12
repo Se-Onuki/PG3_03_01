@@ -77,6 +77,9 @@
     <ClCompile Include="Header\CollisionManager.cpp">
       <Filter>Header</Filter>
     </ClCompile>
+    <ClCompile Include="Header\Scene\OverScene.cpp">
+      <Filter>Header\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\KamataEngine\DirectXGame\audio\Audio.h">
@@ -188,6 +191,9 @@
     </ClInclude>
     <ClInclude Include="Header\Utils\Math.h">
       <Filter>Header\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Header\Scene\OverScene.h">
+      <Filter>Header\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

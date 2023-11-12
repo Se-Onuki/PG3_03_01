@@ -118,6 +118,7 @@ xcopy C:\KamataEngine\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClCompile Include="Header\CollisionManager.cpp" />
     <ClCompile Include="Header\Entity.cpp" />
     <ClCompile Include="Header\Scene\MyGameScene.cpp" />
+    <ClCompile Include="Header\Scene\OverScene.cpp" />
     <ClCompile Include="Header\Scene\SceneManager.cpp" />
     <ClCompile Include="Header\Scene\TitleScene.cpp" />
     <ClCompile Include="Header\Utils\SoLib\SoLib_Easing.cpp" />
@@ -158,6 +159,7 @@ xcopy C:\KamataEngine\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="Header\Entity.h" />
     <ClInclude Include="Header\InputManager.h" />
     <ClInclude Include="Header\Scene\MyGameScene.h" />
+    <ClInclude Include="Header\Scene\OverScene.h" />
     <ClInclude Include="Header\Scene\SceneManager.h" />
     <ClInclude Include="Header\Scene\TitleScene.h" />
     <ClInclude Include="Header\Utils\Math.h" />
