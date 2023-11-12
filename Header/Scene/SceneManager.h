@@ -58,18 +58,23 @@ public:
 		return &instance;
 	}
 
+	/// @brief 遷移の停止
 	void Cancel();
+
+	/// @brief タイマーの状態を取得する
+	/// @return タイマー
+	inline const SoLib::DeltaTimer &GetTimer() const noexcept { return transitionTimer_; }
 
 
 	/// @brief シーン遷移
 	/// @param name 遷移先のシーン
-	void ChangeScene(IScene *const nextScene);
+	void ChangeScene(std::unique_ptr<IScene> nextScene);
 
 
 	/// @brief シーン遷移
 	/// @param name 遷移先の名前キー
 	/// @param transitionTime 必要とする時間
-	void ChangeScene(IScene *const nextScene, const float transitionTime);
+	void ChangeScene(std::unique_ptr<IScene> nextScene, const float transitionTime);
 
 
 	/// @brief シーンの更新

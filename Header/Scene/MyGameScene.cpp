@@ -65,7 +65,7 @@ void MyGameScene::Update([[maybe_unused]] float deltaTime) {
 
 	// プレイヤの一覧をオブジェクトのリストから取得して、その総数が0になったらゲーム終了とする
 	if (GetAllObject<Player>().size() == 0u) {
-		pSceneManager_->ChangeScene(new TitleScene{}, 1.f);
+		pSceneManager_->ChangeScene(std::make_unique<TitleScene>(), 1.f);
 	}
 }
 

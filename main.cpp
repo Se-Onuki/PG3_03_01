@@ -17,7 +17,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 
 	SceneManager *const sceneManager = SceneManager::GetInstance();
 	sceneManager->Init();
-	sceneManager->ChangeScene(new TitleScene{});
+	sceneManager->ChangeScene(std::make_unique<TitleScene>());
 
 	// ウィンドウの×ボタンが押されるまでループ
 	while (Novice::ProcessMessage() == 0) {
