@@ -4,6 +4,8 @@
 #include <Novice.h>
 #include "TitleScene.h"
 #include "OverScene.h"
+#include "Header/InputHandler.h"
+#include "Header/ICommand.h"
 
 MyGameScene::MyGameScene() {
 }
@@ -13,6 +15,10 @@ MyGameScene::~MyGameScene() {
 }
 
 void MyGameScene::OnEnter() {
+
+	static auto *const inputHandle = InputHandler::GetInstance();
+	inputHandle->AssiginMoveLeftCommandPressKeyA();
+	inputHandle->AssiginMoveRightCommandPressKeyD();
 
 	pCollisionManager_ = CollisionManager::GetInstance();
 	// プレイヤを追加
@@ -33,9 +39,13 @@ void MyGameScene::OnExit() {}
 void MyGameScene::Update([[maybe_unused]] float deltaTime) {
 
 
+	static auto *const inputHandle = InputHandler::GetInstance();
+	const auto &inputCommand = inputHandle->HandleInput();
+
 	// オブジェクトを全て走査して、死亡していたら破棄して除外する
 	objectList_.remove_if(
-		[](std::unique_ptr<Object> &object) {
+		[](std::unique_ptr<Object> &object)
+		{
 			// もし死んでいたら
 			if (not object->isAlive_) {
 				// 破棄して除外
@@ -64,6 +74,22 @@ void MyGameScene::Update([[maybe_unused]] float deltaTime) {
 
 #pragma endregion
 
+	// プレイヤのポインタを取得する
+	Player *player = nullptr;
+
+	for (const auto &item : objectList_) {
+		// プレイヤのポインタに変換できるかどうか
+		// ( dynamic_cast は変換不可の場合nullptrとなる。 )
+		player = dynamic_cast<Player *>(item.get());
+		if (player) { break; }
+	}
+
+	// 取得できた場合は、コマンドを実行
+	if (player) {
+		for (const auto &command : inputCommand) {
+			command->Exec(*player);
+		}
+	}
 	// 全オブジェクトの更新
 	for (auto &object : objectList_) {
 		object->Update(deltaTime);

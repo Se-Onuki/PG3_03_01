@@ -19,36 +19,44 @@ void Player::Init() {
 }
 
 void Player::Update([[maybe_unused]] const float deltaTime) {
-	static auto *const inputManager = InputManager::GetInstance();
-	Vector2 inputVec{};
-	// 入力方向の取得
-	if (inputManager->IsPress(DIK_W)) {
-		--inputVec.y;
-	}
-	if (inputManager->IsPress(DIK_S)) {
-		++inputVec.y;
-	}
+	//static auto *const inputManager = InputManager::GetInstance();
+	//Vector2 inputVec{};
+	//// 入力方向の取得
+	//if (inputManager->IsPress(DIK_W)) {
+	//	--inputVec.y;
+	//}
+	//if (inputManager->IsPress(DIK_S)) {
+	//	++inputVec.y;
+	//}
 
-	if (inputManager->IsPress(DIK_A)) {
-		--inputVec.x;
-	}
-	if (inputManager->IsPress(DIK_D)) {
-		++inputVec.x;
-	}
-	// 正規化
-	inputVec = Normalize(inputVec) * kMoveSpeed_;
+	//if (inputManager->IsPress(DIK_A)) {
+	//	--inputVec.x;
+	//}
+	//if (inputManager->IsPress(DIK_D)) {
+	//	++inputVec.x;
+	//}
+	//// 正規化
+	//inputVec = Normalize(inputVec) * kMoveSpeed_;
 
-	ball_.position += inputVec;
+	//ball_.position += inputVec;
 
-	if (inputManager->IsTrigger(DIK_SPACE)) {
-		auto *const bullet = dynamic_cast<Bullet *const>(pGameScene_->AddObject(std::make_unique<Bullet>()));
-		if (bullet) {
-			bullet->ball_.position = this->ball_.position;
-			bullet->velocity_ = Vector2{ 5.f,0.f };
-			bullet->lifeLimit_ = 5.f;
-		}
-	}
+	//if (inputManager->IsTrigger(DIK_SPACE)) {
+	//	auto *const bullet = dynamic_cast<Bullet *const>(pGameScene_->AddObject(std::make_unique<Bullet>()));
+	//	if (bullet) {
+	//		bullet->ball_.position = this->ball_.position;
+	//		bullet->velocity_ = Vector2{ 5.f,0.f };
+	//		bullet->lifeLimit_ = 5.f;
+	//	}
+	//}
 
+}
+
+void Player::MoveRight() {
+	ball_.position.x += kMoveSpeed_;
+}
+
+void Player::MoveLeft() {
+	ball_.position.x -= kMoveSpeed_;
 }
 
 void Player::OnCollision([[maybe_unused]] Object *const other) {

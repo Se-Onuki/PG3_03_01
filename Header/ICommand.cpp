@@ -1,0 +1,11 @@
+#include "ICommand.h"
+#include "Header/Entity.h"
+
+void MoveRightCommand::Exec(Player &player)
+{
+	player.MoveRight();
+}
+
+void MoveLeftCommand::Exec(Player &player) {
+	player.MoveLeft();
+}

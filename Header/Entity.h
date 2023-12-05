@@ -48,6 +48,9 @@ struct Player : public Object {
 	void Init() override;
 	void Update(const float deltaTime) override;
 
+	void MoveRight();
+	void MoveLeft();
+
 	void OnCollision(Object *const other) override;
 };
 

@@ -117,6 +117,8 @@ xcopy C:\KamataEngine\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClCompile Include="C:\KamataEngine\Adapter\Novice.cpp" />
     <ClCompile Include="Header\CollisionManager.cpp" />
     <ClCompile Include="Header\Entity.cpp" />
+    <ClCompile Include="Header\ICommand.cpp" />
+    <ClCompile Include="Header\InputHandler.cpp" />
     <ClCompile Include="Header\Scene\MyGameScene.cpp" />
     <ClCompile Include="Header\Scene\OverScene.cpp" />
     <ClCompile Include="Header\Scene\SceneManager.cpp" />
@@ -157,6 +159,8 @@ xcopy C:\KamataEngine\DirectXGame\Resources "$(OutDirFullPath)NoviceResources" /
     <ClInclude Include="C:\KamataEngine\Adapter\Novice.h" />
     <ClInclude Include="Header\CollisionManager.h" />
     <ClInclude Include="Header\Entity.h" />
+    <ClInclude Include="Header\ICommand.h" />
+    <ClInclude Include="Header\InputHandler.h" />
     <ClInclude Include="Header\InputManager.h" />
     <ClInclude Include="Header\Scene\MyGameScene.h" />
     <ClInclude Include="Header\Scene\OverScene.h" />
